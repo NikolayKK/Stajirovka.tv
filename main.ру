@@ -1,0 +1,26 @@
+def main():
+    # Ввод чисел пользователем через пробел
+    user_input = input("Введите числа через пробел: ")
+    numbers = list(map(int, user_input.split()))
+
+    # Получение чётных чисел
+    even_numbers = [num for num in numbers if num % 2 == 0]
+
+    # Поиск максимального и минимального значения
+    max_num = max(numbers)
+    min_num = min(numbers)
+
+    # Сортировка списка без использования sorted()
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] > numbers[j]:
+                numbers[i], numbers[j] = numbers[j], numbers[i]
+
+    # Вывод
+    print("Чётные числа:", even_numbers)
+    print("Максимальное число:", max_num)
+    print("Минимальное число:", min_num)
+    print("Отсортированный список:", numbers)
+
+if __name__ == "__main__":
+    main()
